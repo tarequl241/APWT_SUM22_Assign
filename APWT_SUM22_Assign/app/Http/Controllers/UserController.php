@@ -40,10 +40,10 @@ class UserController extends Controller
         
         $this->validate($req,
              [
-                "name"=>"required|max:30",
+                "name" => "required|alpha",
                 "id"=>"required",
                 "dob"=>"required",
-                "email"=>'required|email',
+                "email" => "required|email|unique:users,email",
                 "password"=>"required|min:8",
                 "conf_password"=>"required|min:8|same:password"
                
